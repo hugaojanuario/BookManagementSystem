@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table (name = "tarefas")
@@ -16,6 +17,7 @@ public class TaskManager {
     private Long id;
 
     @Column
+    @Size(min = 3, max = 30, message = "nome invalido")
     private String descricao;
 
     @Column
